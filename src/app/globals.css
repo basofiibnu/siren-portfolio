@@ -30,3 +30,14 @@ h1 {
   border-style: solid;
   border-color: white transparent transparent transparent; /* Adjust based on your design */
 }
+
+.swiper-container {
+  width: 800px; /* Set your desired width here */
+  margin: 0 auto; /* Center the container */
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: #fff;
+  font-size: 32px !important;
+}
