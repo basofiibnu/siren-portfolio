@@ -15,6 +15,9 @@ const config: Config = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
+      backgroundImage: {
+        'hero-pattern': "url('/assets/background.png')",
+      },
     },
   },
   plugins: [],

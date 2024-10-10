@@ -8,8 +8,25 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+p,
+button,
+h1 {
+  font-family: 'Poppins', sans-serif;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.triangle::after {
+  content: '';
+  position: absolute;
+  bottom: -20px; /* Adjust based on your design */
+  left: 15%;
+  transform: translateX(-15%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: white transparent transparent transparent; /* Adjust based on your design */
 }

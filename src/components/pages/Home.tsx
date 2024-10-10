@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import MainTemplate from '../templates/MainTemplate';
 import DataDisplay from '../organisms/DataDisplay';
+import Box from '../atoms/Box';
+import Hero from '../organisms/Hero';
+import Slider from '../organisms/Slider';
+import Benefits from '../organisms/Benefits';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -23,8 +27,21 @@ const Home = () => {
 
   return (
     <MainTemplate>
-      <h1>Home Page</h1>
-      <DataDisplay data={data} />
+      <Box className="my-10 flex flex-col gap-8">
+        <Box className="flex items-center justify-start gap-2 ">
+          <Box className="w-full">
+            <Hero />
+          </Box>
+          <Box className="w-full">
+            <Slider />
+          </Box>
+        </Box>
+
+        <Box className="mt-8">
+          <Benefits />
+        </Box>
+      </Box>
+      {/* <DataDisplay data={data} /> */}
     </MainTemplate>
   );
 };

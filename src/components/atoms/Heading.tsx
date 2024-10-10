@@ -1,2 +1,4 @@
-const Heading = ({ children }: { children: React.ReactNode }) => <h1 className="text-2xl font-bold">{children}</h1>;
+const Heading = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
+  <h1 {...props}>{children}</h1>
+);
 export default Heading;

@@ -1,2 +1,4 @@
-const Paragraph = ({ children }: { children: React.ReactNode }) => <p className="text-base">{children}</p>;
+const Paragraph = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
+  <p {...props}>{children}</p>
+);
 export default Paragraph;
