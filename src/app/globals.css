@@ -30,6 +30,16 @@ h1 {
   border-style: solid;
   border-color: white transparent transparent transparent; /* Adjust based on your design */
 }
+.sliderTriangle::after {
+  content: '';
+  position: absolute;
+  bottom: -20px; /* Adjust based on your design */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #e9f7ef transparent transparent transparent; /* Adjust based on your design */
+}
 
 .swiper-container {
   width: 800px; /* Set your desired width here */

@@ -9,15 +9,18 @@ const SliderCard = ({
   image,
   skills,
   flag,
+  className,
 }: {
   title: string;
   experience: string;
   image: string;
   flag: string;
   skills: string[];
+  className?: string;
 }) => {
   return (
-    <Box className="bg-white p-9 rounded-xl flex flex-col items-center justify-center gap-8 w-full min-w-[322px]">
+    <Box
+      className={`bg-white p-9 rounded-xl flex flex-col items-center justify-center gap-8 w-full min-w-[322px] ${className}`}>
       <Box className="flex flex-col items-center gap-4">
         <Box className="relative">
           <Image src={image} alt={title} />
