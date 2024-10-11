@@ -11,7 +11,7 @@ const poppins = Poppins({ weight: '400', subsets: ['latin'], variable: '--font-p
 
 export const metadata: Metadata = {
   title: 'Hyperhire - Coin Siren Portfolio',
-  description: 'Developed to complete Hyperhire Assignment',
+  description: 'Developed to complete Hyperhire Assignment by basofiibnu',
 };
 
 export default function RootLayout({
