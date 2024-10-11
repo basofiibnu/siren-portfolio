@@ -3,25 +3,17 @@ import { motion } from 'framer-motion';
 import Box from '../atoms/Box';
 import BenefitCard from '../molecules/BenefitCard';
 
-const Benefits = () => {
+const Benefits = ({ data }: { data: { title: string; icon: string }[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const benefits = [
-    { title: '해외 마케팅', icon: '/assets/iconmarketing.svg' },
-    { title: '퍼블리셔', icon: '/assets/iconimage.svg' },
-    { title: '캐드원(제도사)', icon: '/assets/iconbox.svg' },
-    { title: '해외 세일즈', icon: '/assets/icontarget.svg' },
-    { title: '해외 CS', icon: '/assets/iconcall.svg' },
-  ];
-
-  const loopedBenefits = [...benefits, ...benefits];
+  const loopedBenefits = [...data, ...data];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % benefits.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [benefits.length]);
+  }, [data.length]);
 
   const variants = {
     initial: { x: '100%' },
@@ -36,10 +28,10 @@ const Benefits = () => {
           <motion.div
             className="flex gap-4"
             initial={{ x: 0 }}
-            animate={{ x: `-${(currentIndex * 100) / benefits.length}%` }}
+            animate={{ x: `-${(currentIndex * 100) / data.length}%` }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             onAnimationComplete={() => {
-              if (currentIndex === benefits.length) {
+              if (currentIndex === data.length) {
                 setCurrentIndex(0);
               }
             }}>

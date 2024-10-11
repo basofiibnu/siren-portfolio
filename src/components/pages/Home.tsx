@@ -1,29 +1,25 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import MainTemplate from '../templates/MainTemplate';
-import DataDisplay from '../organisms/DataDisplay';
 import Box from '../atoms/Box';
 import Hero from '../organisms/Hero';
 import Slider from '../organisms/Slider';
 import Benefits from '../organisms/Benefits';
 
-const Home = () => {
-  const [data, setData] = useState(null);
+export type MembersData = {
+  message: string;
+  data: { title: string; image: string; experience: string; flag: string; skills: string[] }[];
+};
+export type BenefitsData = {
+  message: string;
+  data: { title: string; icon: string }[];
+};
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [res1, res2] = await Promise.all([axios.get('/api/sample'), axios.get('/api/sample')]);
-        setData({ data1: res1.data, data2: res2.data });
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+const Home = ({ data, benefits }: { data: MembersData; benefits: BenefitsData }) => {
+  const { data: members } = data;
+  const { data: benefitData } = benefits;
 
-    fetchData();
-  }, []);
+  console.log(data, benefits);
 
   return (
     <MainTemplate>
@@ -33,15 +29,14 @@ const Home = () => {
             <Hero />
           </Box>
           <Box className="w-full">
-            <Slider />
+            <Slider members={members} />
           </Box>
         </Box>
 
         <Box className="mt-8">
-          <Benefits />
+          <Benefits data={benefitData} />
         </Box>
       </Box>
-      {/* <DataDisplay data={data} /> */}
     </MainTemplate>
   );
 };

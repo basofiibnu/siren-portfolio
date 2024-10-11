@@ -12,7 +12,11 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const Slider = () => {
+const Slider = ({
+  members,
+}: {
+  members: { title: string; image: string; experience: string; flag: string; skills: string[] }[];
+}) => {
   const [centeredSlide, setCenteredSlide] = useState<number>(0);
 
   const handleSlideChange = (swiper: any) => {
@@ -48,18 +52,19 @@ const Slider = () => {
           modules={[EffectCoverflow, Navigation]}
           onSlideChange={handleSlideChange}
           className="mySwiper">
-          {[1, 2, 3, 4, 5].map((item) => (
-            <SwiperSlide key={item}>
-              <SliderCard
-                title="Abhishek Gupta"
-                experience="마케팅 · 2y+"
-                flag="/assets/flag.svg"
-                image="/assets/avatar.svg"
-                skills={['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성']}
-                className="slider-card-content"
-              />
-            </SwiperSlide>
-          ))}
+          {members?.length > 0 &&
+            members.map((item) => (
+              <SwiperSlide key={item.title}>
+                <SliderCard
+                  title={item.title}
+                  experience={item.experience}
+                  flag={item.flag}
+                  image={item.image}
+                  skills={item.skills}
+                  className="slider-card-content"
+                />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </Box>
     </motion.div>
