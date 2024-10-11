@@ -14,6 +14,6 @@ export default async function Home() {
     return <Homepage data={members} benefits={benefits} />;
   } catch (error) {
     console.error('Error fetching data:', error);
-    return <div>Error loading data</div>;
+    return <div>Error loading data apiurl: {process.env.NEXT_PUBLIC_API_URL}</div>;
   }
 }
