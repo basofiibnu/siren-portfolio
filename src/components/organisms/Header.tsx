@@ -19,7 +19,7 @@ const Header = () => {
         <Box>
           <Image src="/assets/logo.svg" alt="logo" />
         </Box>
-        <Box className="flex items-center gap-8">
+        <Box className="items-center gap-8 hidden md:flex">
           <Box className="relative">
             <Box className="flex items-center gap-1 cursor-pointer" onClick={() => setShowMenu(!showMenu)}>
               <Paragraph className="text-base leading-6 font-black text-white">채용</Paragraph>
@@ -62,7 +62,7 @@ const Header = () => {
           </Box>
           <Paragraph className="text-base leading-6 font-black text-white">해외 개발자 활용 서비스</Paragraph>
         </Box>
-        <Box>
+        <Box className="hidden md:block">
           <Button
             className="bg-white rounded-lg py-2 px-6 text-base leading-6 font-black text-[#4A77FF]"
             onClick={() => {}}>

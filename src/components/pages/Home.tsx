@@ -19,12 +19,10 @@ const Home = ({ data, benefits }: { data: MembersData; benefits: BenefitsData })
   const { data: members } = data;
   const { data: benefitData } = benefits;
 
-  console.log(data, benefits);
-
   return (
     <MainTemplate>
       <Box className="my-10 flex flex-col gap-8">
-        <Box className="flex items-center justify-start gap-2 ">
+        <Box className="flex flex-col xl:flex-row items-center justify-start gap-2">
           <Box className="w-full">
             <Hero />
           </Box>

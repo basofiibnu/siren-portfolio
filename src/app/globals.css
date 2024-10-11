@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 p,
@@ -30,6 +31,11 @@ h1 {
   border-style: solid;
   border-color: white transparent transparent transparent; /* Adjust based on your design */
 }
+@media screen and (max-width: 1024px) {
+  .triangle::after {
+    border-color: #8bc4ff transparent transparent transparent;
+  }
+}
 .sliderTriangle::after {
   content: '';
   position: absolute;
@@ -42,8 +48,27 @@ h1 {
 }
 
 .swiper-container {
-  width: 800px; /* Set your desired width here */
-  margin: 0 auto; /* Center the container */
+  width: 800px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .swiper-container {
+    width: 640px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 540px) {
+  .swiper-container {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .swiper-container {
+    width: 320px;
+    margin: 0 auto;
+  }
 }
 
 .swiper-button-prev:after,

@@ -7,11 +7,11 @@ import Image from '../atoms/Image';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FBFBFB] pl-[150px]">
+    <footer className="bg-[#FBFBFB] xl:pl-[150px]">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         <Box className="container mx-auto p-4 py-16 flex flex-col gap-10">
-          <Box className="flex items-center gap-4">
-            <Box className="flex flex-col gap-2 justify-start flex-[3]">
+          <Box className="flex xl:flex-row flex-col items-start xl:items-center gap-4">
+            <Box className="flex flex-col gap-2 justify-start xl:flex-[3]">
               <Image src="/assets/footerlogo.svg" alt="logo" width={187} />
               <Paragraph className="text-sm leading-5 font-black text-[#343741] max-w-[247px] mt-2">
                 우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다.
@@ -20,7 +20,7 @@ const Footer = () => {
               <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F]">aaaaa@naver.com</Paragraph>
             </Box>
 
-            <Box className="flex gap-4 items-center flex-[7]">
+            <Box className="flex flex-wrap gap-4 items-center xl:flex-[7]">
               <FooterCard title="해외 개발자 원격 채용" caption="바로가기" icon="/assets/iconcode.svg" />
               <FooterCard title="외국인 원격 채용 (비개발)" caption="바로가기" icon="/assets/iconavatar.svg" />
               <FooterCard title="한국어 가능 외국인 채용" caption="바로가기" icon="/assets/iconkor.svg" />
@@ -28,8 +28,8 @@ const Footer = () => {
             </Box>
           </Box>
 
-          <Box className="flex items-center gap-4">
-            <Box className="flex items-center gap-4 flex-[3]">
+          <Box className="flex flex-col xl:flex-row items-start xl:items-center gap-8 xl:gap-4">
+            <Box className="flex flex-col xl:flex-row items-start xl:items-center gap-8 xl:gap-4 xl:flex-[3]">
               <Box className="flex flex-col gap-2 justify-start">
                 <Paragraph className="text-sm leading-[18px] font-black text-[#343741]">상호명</Paragraph>
                 <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F] mt-2">하이퍼하이어</Paragraph>
@@ -44,7 +44,7 @@ const Footer = () => {
               </Box>
             </Box>
 
-            <Box className="flex gap-4 items-center flex-[7]">
+            <Box className="flex flex-col xl:flex-row gap-8 xl:gap-4 items-start xl:items-center xl:flex-[7]">
               <Box className="flex flex-col gap-2 justify-start">
                 <Paragraph className="text-sm leading-[18px] font-black text-[#343741]">사업자등록번호 CIN</Paragraph>
                 <Paragraph className="text-[13px] leading-5 font-black text-[#5E626F] mt-2">427-86-01187</Paragraph>

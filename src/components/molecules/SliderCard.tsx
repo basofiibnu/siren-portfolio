@@ -21,7 +21,7 @@ const SliderCard = ({
   return (
     <Box
       style={{ boxShadow: '0px 15px 24px 0px #0000001F' }}
-      className={`bg-white p-9 rounded-xl flex flex-col items-center justify-center gap-8 w-full min-w-[322px] ${className}`}>
+      className={`bg-white p-9 rounded-xl flex flex-col items-center justify-center gap-8 w-full lg:min-w-[322px] ${className}`}>
       <Box className="flex flex-col items-center gap-4">
         <Box className="relative">
           <Image src={image} alt={title} />
